@@ -189,14 +189,12 @@ class VideoPlayer:
                     print("No videos here yet")
                     
                 else:
-                    for video_id in playlist.content:
-                        video = self._video_library.get_video(video_id)
+                    for video in playlist.content:
                         tags = str(video._tags)
                         tags = tags[1:len(tags) - 1]
                         tags = tags.replace("'", "")
                         tags = tags.replace(",", "")
                         print(video._title + " (" + video._video_id + ") [" + tags + "]")
-
             break
 
         if temp == 0:
@@ -292,3 +290,4 @@ class VideoPlayer:
             video_id: The video_id to be allowed again.
         """
         print("allow_video needs implementation")
+
